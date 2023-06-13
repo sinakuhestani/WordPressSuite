@@ -1,0 +1,49 @@
+version: "3.9"
+
+services:
+  wordpress:
+    image: "wordpress:latest"
+    container_name: "wordpress"
+    restart: "always"
+    ports:
+      - "80:80"
+    environment:
+      WORDPRESS_DB_HOST: wp_database
+      WORDPRESS_DB_USER: ${DATABASE_USER}
+      WORDPRESS_DB_PASSWORD: ${DATABASE_PASS}
+      WORDPRESS_DB_NAME: ${DATABASE_NAME}
+    volumes:
+      - "wp_sites:/var/www/html"
+      - "./themes:/var/www/html/wp-content/themes/"
+      - "./plugins:/var/www/html/wp-content/plugins/"
+      - "./uploads:/var/www/html/wp-content/uploads/"
+      - "./config.php:/var/www/html/wp-config.php"
+      - "./.htaccess:/var/www/html/.htaccess"
+  wp_database:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    container_name: "wp_database"
+    restart: "always"
+    environment:
+      MARIADB_DATABASE: ${DATABASE_NAME}
+      MARIADB_USER: ${DATABASE_USER}
+      MARIADB_PASSWORD: ${DATABASE_PASS}
+      MARIADB_ROOT_PASSWORD: ${DATABASE_ROOT_PASS}
+    volumes:
+      - "wp_data:/var/lib/mysql"
+      - "./data:/docker-entrypoint-initdb.d"   
+    command: --init-file /docker-entrypoint-initdb.d/wp_database.sql
+      --init-file /docker-entrypoint-initdb.d/wp_database.sql
+
+  pma:
+    image: "phpmyadmin:latest"
+    container_name: "pma"
+    restart: "always"
+    ports:
+      - 81:80
+    environment:
+      PMA_HOST: wp_database
+volumes:
+  wp_sites:
+  wp_data:
