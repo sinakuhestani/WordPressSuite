@@ -1,0 +1,11 @@
+data/*
+!data/.gitkeep 
+
+plugins/*
+!plugins/.gitkeep 
+
+themes/*
+!themes/.gitkeep 
+
+uploads/*
+!uploads/.gitkeep 
