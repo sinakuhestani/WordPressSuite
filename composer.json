@@ -1,7 +1,7 @@
 {
-    "name": "kimia-git/wordpress-suite",
+    "name": "wpfrog-git/wordpress-suite",
     "description": "WordPress Suite is a docker based development environment for theme and plugin developers.",
-    "version": "1.2.0",
+    "version": "1.2.1",
     "type": "project",
     "keywords": [
         "WordPress", "docker", "php", "docker-compose"
