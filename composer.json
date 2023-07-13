@@ -1,12 +1,12 @@
 {
-    "name": "wpfrog-git/wordpress-suite",
+    "name": "sinabek/wordpress-suite",
     "description": "WordPress Suite is a docker based development environment for theme and plugin developers.",
     "version": "1.3.0",
     "type": "project",
     "keywords": [
         "WordPress", "docker", "php", "docker-compose"
     ],
-    "homepage": "https://github.com/wpfrog-git/WordPressSuite",
+    "homepage": "https://github.com/sinabek/WordPressSuite",
     "readme": "README.md",
     "license": "MIT",
     "authors": [
