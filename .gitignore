@@ -1,11 +1,17 @@
 data/*
-!data/.gitkeep 
+!data/.gitkeep
+
+languages/*
+!languages/.gitkeep 
 
 plugins/*
 !plugins/.gitkeep 
 
 themes/*
 !themes/.gitkeep 
+
+upgrade/*
+!upgrade/.gitkeep 
 
 uploads/*
 !uploads/.gitkeep 

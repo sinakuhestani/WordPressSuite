@@ -17,6 +17,8 @@ services:
       - "./themes:/var/www/html/wp-content/themes/"
       - "./plugins:/var/www/html/wp-content/plugins/"
       - "./uploads:/var/www/html/wp-content/uploads/"
+      - "./languages:/var/www/html/wp-content/uploads/languages/"
+      - "./upgrade:/var/www/html/wp-content/uploads/upgrade/"
       - "./config.php:/var/www/html/wp-config.php"
       - "./.htaccess:/var/www/html/.htaccess"
   wp_database:
